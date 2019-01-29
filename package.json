@@ -23,8 +23,7 @@
   },
   "babel": {
     "presets": [
-      "es2017",
-      "react"
+      "es2017"
     ],
     "plugins": [
       "transform-class-properties",

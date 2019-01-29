@@ -8,9 +8,8 @@ module.exports = {
     // Each entry in here would declare a file that needs to be transpiled
     // and included in the extension source.
     // For example, you could add a background script like:
-    background: 'background.js',
-    popup: 'popup.js',
-    'navigate-collection': 'navigate-collection.js',
+    background: './src/background.js',
+    store: './src/utils/store.js'
   },
   output: {
     // This copies each source entry into the extension dist folder named
@@ -20,7 +19,7 @@ module.exports = {
   },
   module: {
     rules: [{
-      exclude: ['/node_modules/', '!/node_modules/idb-file-storage'],
+      exclude: ['/node_modules/'],
       test: /\.js$/,
       use: [
         // This transpiles all code (except for third party modules) using Babel.

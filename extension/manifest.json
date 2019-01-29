@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+    "name": "NarutoAddon",
+    "version": "1.0",
+   
+    "description": "213",
+    "applications": {
+        "gecko": {
+          "id": "borderify@example.com"
+        }
+      },
+  
+    "browser_action": {
+        "default_title": "Vernaruto",
+        "default_popup": "view/select_chapter.html"
+      },
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.vernaruto.net/*"],
+        "js": ["assets/js/jquery-3.3.1.js", "dist/store.js","dist/background.js"]
+      }
+    ]
+  
+  }
