@@ -9,7 +9,7 @@ module.exports = {
     // and included in the extension source.
     // For example, you could add a background script like:
     background: './src/background.js',
-    store: './src/utils/store.js'
+    tabController: './src/tabController.js'
   },
   output: {
     // This copies each source entry into the extension dist folder named

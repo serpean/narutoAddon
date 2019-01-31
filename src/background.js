@@ -1,5 +1,6 @@
 const getPublicationByName = (name, cb) => {
-    cb(localStorage.getItem(name))
+    var value = localStorage.getItem(name)
+    cb(value)
 }
 
 const savePublicationByName = (name) => {
@@ -7,28 +8,46 @@ const savePublicationByName = (name) => {
 }
 
 const deletePublicationByName = (name) => {
-    localStorage.removeItem(res)
+    localStorage.removeItem(name)
 }
 
-const seen = (name) => {
+const watched = (name) => {
     getPublicationByName(name, (res) => {
-        if(res) {
-            deletePublicationByName(res);
+        if (res) {
+            deletePublicationByName(name);
         } else {
-            savePublicationByName(res);
+            savePublicationByName(name);
         }
+        location.reload();
     })
 }
 
 let chapter = window.location.pathname;
 chapter = chapter.substring(1, chapter.length - 1)
+if (!chapter.startsWith("lista")) {
+    getPublicationByName(chapter, (res) => {
+        if (res) {
+            $("h1.post-header__title").after("<div style='with: 100%; padding: 20px' class='center-text'><button id=" + chapter + ">Visto</button></div>")
+            $("button#" + chapter).click(function () { watched(chapter) })
+        } else {
+            $("h1.post-header__title").after("<div style='with: 100%; padding: 20px' class='center-text'><button id=" + chapter + ">No visto</button></div>")
+            $("button#" + chapter).click(function () { watched(chapter) })
+        }
+    });
+}
 
 
-getPublicationByName("hola", (res)=> {
-    if(res) {
-        $("h1.post-header__title").append("<button id="+chapter+" onclick='seen("+chapter+")'>visto</button>")
-    }
-    $("h1.post-header__title").append("<button id="+chapter+" onclick='seen("+chapter+")'>No visto</button>")
-    console.log(res);
+$("a.newlist-epi__title").each(function() {
+    const href = $(this).attr('href');
+    const chap = href.substring(22, href.length-1);
+    getPublicationByName(chap, (res) => {
+        if (res) {
+            $(this).before("<div style='padding: 0.5rem'><button id=" + chap + " style='background-color: green;'>S</button></div>");
+            $("button#" + chap).click(function () { watched(chap) })
+        } else {
+            $(this).before("<div style='padding: 0.5rem'><button id=" + chap + " style='background-color: red;'>N</button></div>");
+            $("button#" + chap).click(function () { watched(chap) })
+        }
+    });
+    
 });
-

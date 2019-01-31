@@ -9,16 +9,22 @@
           "id": "borderify@example.com"
         }
       },
+
+    "background" : {
+      "scripts": ["dist/tab.js"]
+    },
   
     "browser_action": {
         "default_title": "Vernaruto",
-        "default_popup": "view/select_chapter.html"
-      },
+        "default_icon": {
+          "16": "icons/favicon.ico"
+        }
+    },
   
     "content_scripts": [
       {
         "matches": ["*://*.vernaruto.net/*"],
-        "js": ["assets/js/jquery-3.3.1.js", "dist/store.js","dist/background.js"]
+        "js": ["assets/js/jquery-3.3.1.js", "dist/background.js"]
       }
     ]
   
