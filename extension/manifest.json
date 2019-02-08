@@ -6,12 +6,15 @@
     "description": "213",
     "applications": {
         "gecko": {
-          "id": "borderify@example.com"
+          "id": "vernaruto@serpean.github.io"
         }
       },
+      "permissions": [
+        "storage"
+      ],
 
     "background" : {
-      "scripts": ["dist/tab.js"]
+      "scripts": ["dist/background.js"]
     },
   
     "browser_action": {
@@ -20,11 +23,15 @@
           "16": "icons/favicon.ico"
         }
     },
+    "web_accessible_resources": [
+      "images/eye-solid.svg",
+      "images/eye-slash-solid.svg"
+    ],
   
     "content_scripts": [
       {
         "matches": ["*://*.vernaruto.net/*"],
-        "js": ["assets/js/jquery-3.3.1.js", "dist/background.js"]
+        "js": ["assets/js/jquery-3.3.1.js", "dist/contentScript.js"]
       }
     ]
   
