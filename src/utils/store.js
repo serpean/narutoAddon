@@ -6,19 +6,15 @@ function onError(error) {
   console.log(`Error: ${error}`);
 }
 
-const getPublicationByName = (name, cb) => {
-  console.log(name);
-  browser.storage.sync.get(name).then((res, err) => {
-    console.log("get" + res)
-    console.log(res)
-    return cb(res);
-  });
+const getPublicationByName = name => {
+  return browser.storage.sync.get(name);
 };
 
-const savePublicationByName = chap => {
-  //   console.log(chap);
-  browser.storage.sync.set({ chap: "visto" }).then((_, err) => {
-    if(err) console.log(err);
+const savePublicationByName = chapter => {
+  const jsonfile = {};
+  jsonfile[chapter] = "watched";
+  browser.storage.sync.set(jsonfile).then((_, err) => {
+    if (err) console.log(err);
   });
 };
 
@@ -27,15 +23,13 @@ const deletePublicationByName = name => {
 };
 
 const watched = name => {
-  getPublicationByName(name, res => {
-    console.log(res.name);
+  getPublicationByName(name).then(res => {
     if (!jQuery.isEmptyObject(res)) {
       deletePublicationByName(name);
     } else {
-      console.log("WATCHED");
       savePublicationByName(name);
     }
-    //location.reload();
+    location.reload();
   });
 };
 
