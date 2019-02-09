@@ -1,0 +1,15 @@
+.watched-details {
+  width: 100%;
+  padding: 20px;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.watched-list {
+    margin: 0.5rem; 
+    cursor: pointer;
+}
+.watched-details img, .watched-list img { 
+    width: 20px;
+    height: 20px;
+}

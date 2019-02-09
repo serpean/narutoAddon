@@ -9,9 +9,9 @@ import { getPublicationByName, watched } from "./utils/store";
       if (!jQuery.isEmptyObject(res)) {
         image = browser.extension.getURL("images/eye-solid.svg");
         $("h1.post-header__title").after(
-          "<div class='center-text' style='with: 100%; padding: 20px;margin: 0.5rem; cursor: pointer;' id='" +
+          "<div class='center-text watched-details' id='" +
             chapter +
-            "'><img with='20px' height='20px' src=" +
+            "'><img src=" +
             image +
             " alt='" +
             chapter +
@@ -23,9 +23,9 @@ import { getPublicationByName, watched } from "./utils/store";
       } else {
         image = browser.extension.getURL("images/eye-slash-solid.svg");
         $("h1.post-header__title").after(
-          "<div class='center-text' style='with: 100%; padding: 20px;margin: 0.5rem; cursor: pointer;' id='" +
+          "<div class='center-text watched-details' id='" +
             chapter +
-            "'><img with='20px' height='20px' src=" +
+            "'><img src=" +
             image +
             " alt='" +
             chapter +
@@ -46,9 +46,9 @@ import { getPublicationByName, watched } from "./utils/store";
       if (!jQuery.isEmptyObject(res)) {
         image = browser.extension.getURL("images/eye-solid.svg");
         $(this).before(
-          "<div style='margin: 0.5rem; cursor: pointer;' id='" +
+          "<div class='watched-list' id='" +
             chapter +
-            "'><img with='20px' height='20px' src=" +
+            "'><img src=" +
             image +
             " alt='" +
             chapter +
@@ -60,9 +60,9 @@ import { getPublicationByName, watched } from "./utils/store";
       } else {
         image = browser.extension.getURL("images/eye-slash-solid.svg");
         $(this).before(
-          "<div style='margin: 0.5rem; margin-left: 0; cursor: pointer;' id='" +
+          "<div class='watched-list' id='" +
             chapter +
-            "'><img with='20px' height='20px' src='" +
+            "'><img src='" +
             image +
             "' alt='" +
             chapter +

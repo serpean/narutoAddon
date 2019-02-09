@@ -31,7 +31,8 @@
     "content_scripts": [
       {
         "matches": ["*://*.vernaruto.net/*"],
-        "js": ["assets/js/jquery-3.3.1.js", "dist/contentScript.js"]
+        "js": ["assets/js/jquery-3.3.1.js", "dist/contentScript.js"],
+        "css": ["assets/css/narutoAddon.css"]
       }
     ]
   
