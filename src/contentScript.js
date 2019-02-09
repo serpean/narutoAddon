@@ -1,9 +1,10 @@
 import { getPublicationByName, watched } from "./utils/store";
 
 (function() {
+  let image;
+  let href;
   let chapter = window.location.pathname;
   chapter = chapter.substring(1, chapter.length - 1);
-  let image;
   if (!chapter.startsWith("lista")) {
     getPublicationByName(chapter).then(res => {
       if (!jQuery.isEmptyObject(res)) {
@@ -39,9 +40,8 @@ import { getPublicationByName, watched } from "./utils/store";
   }
 
   $("a.newlist-epi__title").each(function() {
-    const href = $(this).attr("href");
-    const chapter = href.substring(22, href.length - 1);
-    let image;
+    href = $(this).attr("href");
+    chapter = href.substring(22, href.length - 1);
     getPublicationByName(chapter).then(res => {
       if (!jQuery.isEmptyObject(res)) {
         image = browser.extension.getURL("images/eye-solid.svg");
