@@ -1,2 +1,2 @@
 # narutoAddon
-Firefox's Addon wich permit follow the series
+Firefox's Addon which allows check as read vernaruto.net chapters.
