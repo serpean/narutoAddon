@@ -5,21 +5,30 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --display-error-details --progress --colors",
-    "build:watch": "npm run build -- -w",
-    "start": "npm run build && web-ext run -s extension/"
+    "build:dev": "NODE_ENV=development; webpack --mode development --display-error-details --progress --colors",
+    "build:watch": "npm run build:dev -- -w",
+    "start": "npm run build && web-ext run -s extension/",
+    "build:production": "NODE_ENV=production; webpack --mode production --config webpack.config.js; cd extension; web-ext build --overwrite-dest; cd .."
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serpean/narutoAddon"
+  },
+  "author": {
+    "email": "sergi9p@gmail.com",
+    "name": "Sergio Pérez"
+},
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1",
     "babel-core": "6.24.1",
     "babel-loader": "7.0.0",
     "babel-plugin-transform-class-properties": "6.24.1",
-    "babel-plugin-transform-object-rest-spread": "6.23.0",
     "babel-plugin-transform-es2015-modules-commonjs": "6.24.1",
-    "babel-preset-es2017": "6.24.1"
+    "babel-plugin-transform-object-rest-spread": "6.23.0",
+    "babel-preset-es2017": "6.24.1",
+    "web-ext": "^2.9.3",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
   },
   "babel": {
     "presets": [
