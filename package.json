@@ -1,13 +1,13 @@
 {
   "name": "narutoaddon",
-  "version": "1.0.0",
+  "version": "1.0",
   "description": "",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "NODE_ENV=development; webpack --mode development --display-error-details --progress --colors",
     "build:watch": "npm run build:dev -- -w",
-    "start": "npm run build && web-ext run -s extension/",
+    "start": "npm run build:dev && web-ext run -s extension/",
     "build:production": "NODE_ENV=production; webpack --mode production --config webpack.config.js; cd extension; web-ext build --overwrite-dest; cd .."
   },
   "repository": {
