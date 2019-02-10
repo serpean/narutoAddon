@@ -17,8 +17,12 @@
   "author": {
     "email": "sergi9p@gmail.com",
     "name": "Sergio Pérez"
-},
+  },
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serpean/narutoAddon/issues"
+  },
+  "homepage": "https://github.com/serpean/narutoAddon#readme",
   "devDependencies": {
     "babel-core": "6.24.1",
     "babel-loader": "7.0.0",
