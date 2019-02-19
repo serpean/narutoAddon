@@ -1,4 +1,4 @@
-# NarutoAddon
+# verNarutoAddon
 
 Webextension for vernaruto.net
 
