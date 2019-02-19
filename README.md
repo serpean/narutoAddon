@@ -20,7 +20,7 @@ If you want to reload webpack in each change, open other terminal and run:
 
 > npm run build:production
 
-#TODO
+## Next improvements
 - ~~Improve design~~
 - ~~Study for other db implementation~~
 - Include homepage
