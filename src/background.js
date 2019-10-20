@@ -1,6 +1,6 @@
 function onPage() {
     browser.tabs.create({
-        url: "https://vernaruto.net"
+        url: "https://vernaruto.tv"
     });
 }
 

@@ -30,7 +30,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "6.24.1",
     "babel-plugin-transform-object-rest-spread": "6.23.0",
     "babel-preset-es2017": "6.24.1",
-    "web-ext": "^2.9.3",
+    "web-ext": "^3.2.0",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1"
   },

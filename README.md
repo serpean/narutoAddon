@@ -1,4 +1,9 @@
-# verNarutoAddon
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+# [DEPRECATED] verNarutoAddon
+
+> Naruto.net is now naruto.tv and implement this extension mision for registered users.
+
 
 Webextension for vernaruto.net
 
